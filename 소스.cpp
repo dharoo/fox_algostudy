@@ -4,41 +4,32 @@ using namespace std;
 
 int main()
 {
-	int num = 0;
-	int temp = 0;
-	int sosu = 0;
-	int arr[100] = { 0 };
+	int count = 0;
+	int cCount = 0;
+	int n = 0;
+	cin >> n;
+	int a = 0;
 
-	cin >> num;
-
-	for (int i = 0; i < num; i++)
+	for (int i = 0; i < n; ++i)
 	{
-		cin >> temp;
+		cin >> a;
 
-		arr[i] = temp;
-	}
-
-	for (int i = 0; i < num; i++)
-	{
-		if (arr[i] == 1) continue;
-
-		int temp1 = 0;
-
-		for (int j = 2; j < arr[i]; j++)
+		for (int j = 2; j < a + 1; ++j)
 		{
-			if (arr[i] % j != 0)
+			if ((a % j) == 0)
 			{
-				temp1++;
+				count++;
 			}
 		}
-
-		if (temp1 == arr[i] - 2)
+		if (count == 1)
 		{
-			sosu++;
+			cCount++;
 		}
+		count = 0;
 	}
 
-	cout << sosu;
+	cout << cCount;
+
 
 	return 0;
 }
